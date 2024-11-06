@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class PlayerLife : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioPlayer = GetComponent<SoundPlayer>();
         _life = maxLife;
+    }
+    private void Update()
+    {
+        if (_life < 0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void Hurt(int damage)

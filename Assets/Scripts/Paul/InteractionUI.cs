@@ -10,6 +10,8 @@ public class InteractionUI : MonoBehaviour
     private TextMeshProUGUI interactionText;
     [SerializeField]
     private GameObject Text2;
+    
+    
 
 
     public static InteractionUI Instance;
