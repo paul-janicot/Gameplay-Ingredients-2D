@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     public Rigidbody2D Player;
+    [SerializeField] private float JumpPadForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class JumpPad : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            collision.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpPadForce), ForceMode2D.Impulse);
         }
     }
 }
